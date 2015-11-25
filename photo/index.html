@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="afPhotos" ng-controller="PhotoController">
     <head>
-        <title>Asher Foster - {{photo.name}}</title>
+        <title>Asher Foster - {{photo.name || "Not Found"}}</title>
         <link rel="stylesheet" href="/css/main.css" type="text/css">
         <style>
             .full-img{
@@ -28,7 +28,7 @@
             </ul>
         </nav>
         <main ng-hide="photoExists">
-            Error. Photo not found
+            Error. Photo "{{id}}" not found
         </main>
         <main ng-show="photoExists">
             <img class="full-img" ng-src="{{photo.url}}">
