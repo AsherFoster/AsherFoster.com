@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="afPhotos" ng-controller="PhotoController">
+    <head>
+        <title>Asher Foster - {{photo.name}}</title>
+        <link rel="stylesheet" href="/css/main.css" type="text/css">
+        <style>
+            .full-img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+            .full-name{
+                font-size: 3em;
+            }
+        </style>
+        <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="/data/photos.js"></script>
+        <script src="/js/photos.js"></script>
+    </head>
+    <body>
+        <nav>
+            <a href="/" id="title">Asher Foster<sup>BETA</sup></a>
+            <ul>
+                <li class="cur"><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/photos">Photos</a></li>
+            </ul>
+        </nav>
+        <main ng-hide="photoExists">
+            Error. Photo not found
+        </main>
+        <main ng-show="photoExists">
+            <img class="full-img" ng-src="{{photo.url}}">
+            <div class="full-name">{{photo.name}}</div>
+            <div class="full-loc"><i>{{photo.loc}}</i></div>
+            <div class="full-desc">
+                {{photo.desc}}
+            </div>
+        </main>
+        <footer>
+            Made by Asher Foster in 2015 - 
+            <a target="_blank" class="subtle" href="//twitter.com/asherfoster">Twitter</a>
+            -
+            <a target="_blank" class="subtle" href="//freelancer.com/u/Ashernz.html">Freelancer</a>
+            -
+            <a target="_blank" class="subtle" href="//github.com/AsherFoster">GitHub</a>
+        </footer>
+    </body>
+</html>

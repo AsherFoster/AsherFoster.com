@@ -1,0 +1,67 @@
+/* main.css -- Trademark Asher Foster 2015 */
+*{position: relative;vertical-align: top}
+html, body{
+    background: #FFF;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Roboto", "Arial", sans-serif;
+}
+nav{
+    position: fixed;
+    border-right: 2px solid #EEE;
+    height: 100%;
+    width: 24%;
+    padding: 1% 1% 0 0;
+    display: inline-block;
+    text-align: right;
+}
+nav ul{
+    list-style: none
+}
+nav li{
+    font-size: 1.5em;
+    padding: 2px;
+    transition: left 0.3s;
+    border-bottom: 2px solid #EEE;
+}
+nav li a{
+    margin-right: 5%;
+    text-decoration: none;
+}
+nav li.cur{
+    border-right: 2px solid #555;
+}
+nav li:hover{
+    transition: border-right 0.2s;
+    background: #EEE;
+    border-right: 4px solid #444;
+}
+main{
+    top: 50px;
+    left: 27%;
+    width: 60%;
+    display: inline-block;
+}
+a{
+    color: inherit;
+}
+#title{
+    font-size: 2em;
+    text-decoration: none;
+    font-family: "Source Code Pro", serif;
+}
+footer{
+    text-align: center;
+    padding: 20px;
+    margin-top: 7%;
+}
+sup{
+    font-size: 0.6em;
+}
+a.subtle{
+    text-decoration: none;
+}
+a.subtle:hover{
+    border-bottom: 2px solid #000;
+}
