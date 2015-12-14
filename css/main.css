@@ -7,9 +7,21 @@ html, body{
     height: 100%;
     font-family: "Roboto", "Arial", sans-serif;
 }
+body.dark{
+    transition: background 0.3s;
+    background: #333;
+    color: #CCC;
+}
+body.dark nav{
+    transition: background 0.3s;
+    background: #222
+}
+.hidden{
+  display: none
+}
 nav{
+    background: #EEE;
     position: fixed;
-    border-right: 2px solid #EEE;
     height: 100%;
     width: 24%;
     padding: 1% 1% 0 0;
@@ -23,7 +35,6 @@ nav li{
     font-size: 1.5em;
     padding: 2px;
     transition: left 0.3s;
-    border-bottom: 2px solid #EEE;
 }
 nav li a{
     margin-right: 5%;
@@ -34,7 +45,6 @@ nav li.cur{
 }
 nav li:hover{
     transition: border-right 0.2s;
-    background: #EEE;
     border-right: 4px solid #444;
 }
 main{
@@ -42,6 +52,10 @@ main{
     left: 27%;
     width: 60%;
     display: inline-block;
+}
+.nav-tgl{
+    top: -10px;
+    font-size: 3em;
 }
 a{
     color: inherit;
@@ -56,12 +70,46 @@ footer{
     padding: 20px;
     margin-top: 7%;
 }
-sup{
-    font-size: 0.6em;
-}
 a.subtle{
     text-decoration: none;
 }
 a.subtle:hover{
     border-bottom: 2px solid #000;
+}
+.lbl {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  width: 44px;
+  background: #898989;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.lbl:after {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+  background: #fff;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+  content: '';
+  transition: all 0.3s ease;
+}
+.cbx:checked ~ label {
+  background: #6fbeb5;
+}
+.cbx:checked ~ label:after {
+  left: 20px;
+  background: #179588;
+}
+.cbx:disabled ~ label {
+  background: #d5d5d5;
+  pointer-events: none;
+}
+.cbx:disabled ~ label:after {
+  background: #bcbdbc;
 }

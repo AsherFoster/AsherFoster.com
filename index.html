@@ -18,15 +18,19 @@
         <script src="/data/home.js"></script>
         <script src="/js/home.js"></script>
     </head>
-    <body>
+    <body ng-class="darkTheme ? 'dark' : 'light'">
         <nav>
-            <a href="/" id="title">Asher Foster<sup>BETA</sup></a>
+            <a href="/" id="title">Asher Foster</a>
+            <a onclick="" class="nav-tgl">&laquo;</a>
             <ul>
                 <li class="cur"><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/projects">Projects</a></li>
                 <li><a href="/photos">Photos</a></li>
             </ul>
+            <input type="checkbox" id="theme" class="cbx hidden" ng-model="darkTheme">
+            <label for="theme" class="lbl"></label>
+            Toggle Theme
         </nav>
         <main ng-controller="postController">
             <div class="hm-ps" ng-repeat="post in posts">
