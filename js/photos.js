@@ -1,5 +1,4 @@
 var id = window.location.href.substring(window.location.href.lastIndexOf("?") + 1);
-var app = angular.module('afPhotos', []);
 app.controller('ListController', function($scope){
     $scope.photos = photos;
 });

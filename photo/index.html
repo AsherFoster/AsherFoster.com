@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="afPhotos" ng-controller="PhotoController">
+<html ng-app="site" ng-controller="PhotoController">
     <head>
         <title>Asher Foster - {{photo.name || "Not Found"}}</title>
         <link rel="stylesheet" href="/css/main.css" type="text/css">
@@ -15,18 +15,11 @@
         <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script src="/data/photos.js"></script>
+        <script src="/js/main.js"></script>
         <script src="/js/photos.js"></script>
     </head>
     <body>
-        <nav>
-            <a href="/" id="title">Asher Foster<sup>BETA</sup></a>
-            <ul>
-                <li class="cur"><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/photos">Photos</a></li>
-            </ul>
-        </nav>
+        <div ng-include="'/nav.html'"></div>
         <main ng-hide="photoExists">
             Error. Photo "{{id}}" not found
         </main>
