@@ -7,12 +7,12 @@ html, body{
     height: 100%;
     font-family: "Roboto", "Arial", sans-serif;
 }
-body.dark{
+body[theme = dark]{
     transition: background 0.3s;
     background: #333;
     color: #CCC;
 }
-body.dark nav{
+body[theme = dark] nav{
     transition: background 0.3s;
     background: #222
 }
