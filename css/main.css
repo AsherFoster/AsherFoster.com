@@ -1,5 +1,8 @@
 /* main.css -- Trademark Asher Foster 2015 */
-*{position: relative;vertical-align: top}
+*{
+    position: relative;
+    vertical-align: top
+}
 html, body{
     margin: 0;
     width: 100%;
@@ -9,11 +12,12 @@ html, body{
 body[theme = dark] main{
     transition: background 0.3s;
     background: #333;
-    color: #CCC;
+    color: #EEE;
 }
 body[theme = dark] nav{
     transition: background 0.3s;
-    background: #222
+    background: #222;
+    color: #BBB;
 }
 .hidden{
   display: none
@@ -30,6 +34,7 @@ nav{
     z-index: 999
 }
 .nav-min{
+    transition: left 0.5s;
     position: fixed;
     width: 65px;
     background: #555;
@@ -59,9 +64,9 @@ nav li:hover{
 main{
     background: #FFF;
     transition: width 0.5s, left 0.5s;
-    top: 50px;
-    left: 27%;
-    width: 60%;
+    padding: 5%;
+    left: 25%;
+    width: 65%;
     display: inline-block;
 }
 .nav-tgl{
