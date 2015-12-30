@@ -6,7 +6,7 @@ var app = angular.module('site', []), theme, nav = {
     },
     collapse: function(){
         document.getElementsByTagName("nav")[0].style.left = "-25%";
-        document.getElementsByTagName("main")[0].style.left = "70px";
+        document.getElementsByTagName("main")[0].style.left = "65px";
         document.getElementsByTagName("main")[0].style.width = "85%";
     }
 };
