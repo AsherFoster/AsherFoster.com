@@ -1,6 +1,6 @@
 <nav ng-controller="navController">
     <a href="/" id="title">Asher Foster</a>
-    <a onclick="nav.collapse()" class="nav-tgl">&laquo;</a>
+    <a onclick="nav.collapse()" class="nav-tgl link">&laquo;</a>
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
@@ -11,6 +11,6 @@
     <label for="theme" class="lbl"></label>
     Toggle Theme
 </nav>
-<div class="nav-min">
-    <a title="expand" onclick="nav.expand()">&raquo;</a>
+<div class="nav-min link" onclick="nav.expand()">
+    <a title="expand">&raquo;</a>
 </div>

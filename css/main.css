@@ -1,7 +1,6 @@
 /* main.css -- Trademark Asher Foster 2015 */
 *{
-    position: relative;
-    vertical-align: top
+    position: relative
 }
 html, body{
     margin: 0;
@@ -21,6 +20,9 @@ body[theme = dark] nav{
 }
 .hidden{
   display: none
+}
+.link{
+    cursor: pointer
 }
 nav{
     transition: left 0.5s;
@@ -62,6 +64,7 @@ nav li:hover{
     border-right: 4px solid #444;
 }
 main{
+    min-height: 90%;
     background: #FFF;
     transition: width 0.5s, left 0.5s;
     padding: 5%;
@@ -70,14 +73,14 @@ main{
     display: inline-block;
 }
 .nav-tgl{
-    top: -10px;
+    top: 3px;
     font-size: 3em;
 }
 a{
     color: inherit;
 }
 #title{
-    font-size: 2em;
+    font-size: 2.7vw;
     text-decoration: none;
     font-family: "Source Code Pro", serif;
 }

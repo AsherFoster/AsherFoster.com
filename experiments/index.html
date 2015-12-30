@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="site">
 <head>
     <title>Experiments | Asher Foster</title>
     <link rel="stylesheet" href="/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/css/home.css" type="text/css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
-    <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-          ga('create', 'UA-53155844-4', 'auto');
-          ga('send', 'pageview');
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="/data/home.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/home.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-53155844-4', 'auto');ga('send', 'pageview');
+        app.filter('numLen', function () {
+            return function(a,b){
+                return(1e4+a+"").slice(-b)
+            }
+        })
+        .controller('experimentCtrl', function($scope){
+            $scope.max = new Array(1);
+        })
+    </script>
 	<meta charset="utf-8">
 </head>
 <body>
     <div ng-include="'/nav.html'"></div>
-    <main ng-controller="postController">
-        <p>Coming Soon</p>
+    <main>
+        <h1>Experimental page</h1>
+        <ul ng-controller="experimentCtrl">
+            <li ng-repeat="i in max track by $index"><a href="/experiments/{{$index + 1 | numLen:3}}.html">Experiment {{$index+1 | numLen:3}}</a></li>
+        </ul>
+        <i>I have way to much spare time. I make these when I'm not playing Borderlands</i>
         <footer>
             Made by Asher Foster in 2015 -
             <a target="_blank" class="subtle" href="//twitter.com/asherfoster">Twitter</a>
