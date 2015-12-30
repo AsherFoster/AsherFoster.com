@@ -29,6 +29,7 @@
                 Saturation: <input type="range" min="0" max="100" id="sat">
                 Lightness: <input type="range" min="0" max="100" id="lig">
                 Speed: <input type="range" min="0" max="50" id="speed" value="5">
+                <span id="color"></span>      
             </span>
         </span>
         <script>
@@ -38,6 +39,7 @@
                 lig = d.getElementById("lig"),
                 sat = d.getElementById("sat"),
                 speed = d.getElementById("speed"),
+                colorSpan = d.getElementById("color"),
                 settings = d.getElementById("settings").style;
             function getCookie(n){
                 var c = d.cookie.split(";").forEach(function(n){
@@ -53,11 +55,14 @@
                 }
             }
             setInterval(function(){
-                body.style.background = "hsl("+hue+", "+sat.value+"%, "+lig.value+"%)";
-                d.cookie = "sat="+sat;
-                d.cookie = "lig="+lig;
-                d.cookie = "speed="+speed;
-                hue+= Number(speed.value)/5;
+                color = "hsl("+hue+", "+sat.value+"%, "+lig.value+"%)";
+                colorSpan.innerHTML = color;
+                body.style.background = color;
+                d.cookie = "sat="+sat.value;
+                d.cookie = "lig="+lig.value;
+                d.cookie = "speed="+speed.value;
+                
+                hue = Math.floor(hue > 359 ? 0 : hue+ Number(speed.value)/5);
             }, 20)
         </script>
     </body>

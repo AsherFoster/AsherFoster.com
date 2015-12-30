@@ -21,6 +21,9 @@ body[theme = dark] nav{
 .hidden{
   display: none
 }
+.link{
+    cursor: pointer
+}
 nav{
     transition: left 0.5s;
     background: #EEE;
@@ -70,14 +73,14 @@ main{
     display: inline-block;
 }
 .nav-tgl{
-    top: 2px;
+    top: 3px;
     font-size: 3em;
 }
 a{
     color: inherit;
 }
 #title{
-    font-size: 2.8vw;
+    font-size: 2.7vw;
     text-decoration: none;
     font-family: "Source Code Pro", serif;
 }
