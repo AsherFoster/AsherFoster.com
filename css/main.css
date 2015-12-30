@@ -1,25 +1,29 @@
 /* main.css -- Trademark Asher Foster 2015 */
-*{position: relative;vertical-align: top}
+*{
+    position: relative;
+    vertical-align: top
+}
 html, body{
-    background: #FFF;
     margin: 0;
     width: 100%;
     height: 100%;
     font-family: "Roboto", "Arial", sans-serif;
 }
-body[theme = dark]{
+body[theme = dark] main{
     transition: background 0.3s;
     background: #333;
-    color: #CCC;
+    color: #EEE;
 }
 body[theme = dark] nav{
     transition: background 0.3s;
-    background: #222
+    background: #222;
+    color: #BBB;
 }
 .hidden{
   display: none
 }
 nav{
+    transition: left 0.5s;
     background: #EEE;
     position: fixed;
     height: 100%;
@@ -27,6 +31,16 @@ nav{
     padding: 1% 1% 0 0;
     display: inline-block;
     text-align: right;
+    z-index: 999
+}
+.nav-min{
+    transition: left 0.5s;
+    position: fixed;
+    width: 65px;
+    background: #555;
+    height: 100%;
+    font-size: 3em; 
+    text-align: center
 }
 nav ul{
     list-style: none
@@ -48,9 +62,11 @@ nav li:hover{
     border-right: 4px solid #444;
 }
 main{
-    top: 50px;
-    left: 27%;
-    width: 60%;
+    background: #FFF;
+    transition: width 0.5s, left 0.5s;
+    padding: 5%;
+    left: 25%;
+    width: 65%;
     display: inline-block;
 }
 .nav-tgl{
