@@ -1,3 +1,7 @@
+.nav{
+    background: transparent;
+    transition: background 0.5s;
+}
 .hm-ps-img{
     margin-top: 5px;
     width: 100%;
@@ -20,4 +24,20 @@
 }
 .hm-ps-lnk{
     text-align: right
+}
+.hm-ft{
+    height: 90%;
+    background: url(/img/thing.JPG) no-repeat bottom;
+    background-size: cover;
+    color: #FFF;
+    text-align: center;
+}
+.hm-ft h1{
+    font-weight: 100;
+    margin: 0;
+    font-size: 5em;
+    padding-top: 40%;
+}
+.hm-ft div{
+    font-size: 2em;
 }

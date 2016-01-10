@@ -11,7 +11,7 @@
         <script src="/js/photos.js"></script>
     </head>
     <body>
-        <div ng-include="'/nav.html'"></div>
+        <div class="nav" ng-include="'/nav.html'"></div>
         <main ng-controller="ListController">
             <div class="img-w" ng-repeat="(ind, photo) in photos">
                 <div class="img-bg" style="background:url({{photo.url}});background-size: cover"></div>

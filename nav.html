@@ -1,16 +1,8 @@
-<nav ng-controller="navController">
+<nav>
     <a href="/" id="title">Asher Foster</a>
-    <a onclick="nav.collapse()" class="nav-tgl link">&laquo;</a>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/experiments">Experiments</a></li>
-        <li><a href="/photos">Photos</a></li>
-    </ul>
-    <input type="checkbox" id="theme" class="cbx hidden" ng-model="theme">
-    <label for="theme" class="lbl"></label>
-    Toggle Theme
+    <span class="nav-r">
+        <a href="/about">About</a>
+        <a href="/experiments">Experiments</a>
+        <a href="/photos">Photos</a>
+    </span>        
 </nav>
-<div class="nav-min link" onclick="nav.expand()">
-    <a title="expand">&raquo;</a>
-</div>

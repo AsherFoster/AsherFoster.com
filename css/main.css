@@ -24,63 +24,39 @@ body[theme = dark] nav{
 .link{
     cursor: pointer
 }
-nav{
-    transition: left 0.5s;
-    background: #EEE;
+.nav{
     position: fixed;
-    height: 100%;
-    width: 24%;
-    padding: 1% 1% 0 0;
-    display: inline-block;
-    text-align: right;
+    width: 97%;
+    color: #FFF;
+    background: #555;
+    padding: 10px 1.5%;
     z-index: 999
 }
-.nav-min{
-    transition: left 0.5s;
-    position: fixed;
-    width: 65px;
-    background: #555;
-    height: 100%;
-    font-size: 3em; 
-    text-align: center
-}
-nav ul{
-    list-style: none
-}
-nav li{
-    font-size: 1.5em;
-    padding: 2px;
-    transition: left 0.3s;
-}
-nav li a{
-    margin-right: 5%;
+nav a:not(#title){
+    display: inline-block;
+    font-size: 1.3em;
+    border-radius: 4px;
+    padding: 7px;
     text-decoration: none;
 }
-nav li.cur{
-    border-right: 2px solid #555;
+nav a:not(#title):hover{
+    transition: background 0.2s;
+    background: rgba(0,0,0,0.2)
 }
-nav li:hover{
-    transition: border-right 0.2s;
-    border-right: 4px solid #444;
+.nav-r{
+    float: right
 }
 main{
-    min-height: 90%;
     background: #FFF;
-    transition: width 0.5s, left 0.5s;
-    padding: 5%;
-    left: 25%;
-    width: 65%;
-    display: inline-block;
-}
-.nav-tgl{
-    top: 3px;
-    font-size: 3em;
+    padding: 6% 10%;
+    width: 80%;
 }
 a{
     color: inherit;
 }
 #title{
-    font-size: 2.7vw;
+    display: inline-block;
+    font-size: 1.8em;
     text-decoration: none;
     font-family: "Source Code Pro", serif;
 }
@@ -94,41 +70,4 @@ a.subtle{
 }
 a.subtle:hover{
     border-bottom: 2px solid #000;
-}
-.lbl {
-  position: relative;
-  display: inline-block;
-  height: 20px;
-  width: 44px;
-  background: #898989;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.lbl:after {
-  position: absolute;
-  left: -2px;
-  top: -3px;
-  display: block;
-  width: 26px;
-  height: 26px;
-  border-radius: 100px;
-  background: #fff;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
-  content: '';
-  transition: all 0.3s ease;
-}
-.cbx:checked ~ label {
-  background: #6fbeb5;
-}
-.cbx:checked ~ label:after {
-  left: 20px;
-  background: #179588;
-}
-.cbx:disabled ~ label {
-  background: #d5d5d5;
-  pointer-events: none;
-}
-.cbx:disabled ~ label:after {
-  background: #bcbdbc;
 }

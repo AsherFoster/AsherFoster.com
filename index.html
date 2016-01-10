@@ -20,7 +20,11 @@
         <script src="/js/home.js"></script>
     </head>
     <body ng-class="theme">
-        <div ng-include="'/nav.html'"></div>
+        <div class="nav" ng-include="'/nav.html'"></div>
+        <div class="hm-ft">
+            <h1>Asher Foster</h1>
+            <div>There is stuff here</div>
+        </div>
         <main ng-controller="postController">
             <div class="hm-ps" ng-repeat="post in posts">
                 <div class="hm-ps-h">

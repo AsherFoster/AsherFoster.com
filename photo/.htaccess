@@ -2,4 +2,4 @@ RewriteEngine On
 RewriteBase /photo/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([a-zA-Z0-9]+)$ index.html?id=$1 [L,QSA]
+RewriteRule ^([a-zA-Z0-9]+)$ index.html?$1 [L,QSA]
