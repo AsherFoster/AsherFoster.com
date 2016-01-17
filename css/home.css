@@ -2,6 +2,10 @@
     background: transparent;
     transition: background 0.5s;
 }
+main{
+    opacity: 0;
+    transition: opacity 0.3s
+}
 .hm-ps-img{
     margin-top: 5px;
     width: 100%;
