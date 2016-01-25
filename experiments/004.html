@@ -91,6 +91,7 @@
             window.onload = reCalc;
             app.controller("main", function($scope){
                 $scope.colors = colors;
+                $scope.bgCol = $scope.colors[0];
                 $scope.players = [new Player(), new Player()];
                 $scope.addPlayer = function(){
                     $scope.players.push(new Player());
