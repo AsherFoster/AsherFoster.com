@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-controller="calc">
+    <head>
+        <title>Averager</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    </head>
+    <body ng-controller="main">
+        <input id="input" onkeypress="keyHandler(event)">
+        <span id="out">OUT</span>
+        <script>
+            "use strict";
+            function keyHandler(e){
+                e.keyCode == 13 && function(){
+                    nums.push(Number(input.value));
+                    input.value = "";
+                }()
+            }
+            function avg(){
+                var x = 0;
+                nums.forEach(function(i){
+                    x = x + Number(i);
+                });
+                return x / nums.length;
+            }
+            var app = angular.module('calc', []),
+                input = document.getElementById("input"),
+                out = document.getElementById("out"),
+                nums = [];
+                setInterval(function(){
+                        out.innerHTML = avg();
+                }, 100)
+                app.controller('main', function($scope){
+                })
+        </script>
+    </body>
+</html>

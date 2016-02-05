@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="site">
+    <head>
+        <title>Asher Foster - Projects</title>
+        <link rel="stylesheet" href="/css/main.css" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="/js/main.js"></script>
+        <style>
+            .project{
+                display: inline-block;
+                width: 47.8%;
+                margin: 1%;
+                background: #000;
+                color: #FFF;
+                height: 300px;
+                font-weight: 100;
+                font-size: 1.3em;
+            }
+            .pn{
+                font-size: 2.5em;
+            }
+            .pd{
+                height: 280px;
+                width: calc(100% - 20px);
+                padding: 10px;
+                transition: background 0.3s;
+                background: rgba(0,0,0,0.7)
+            }
+            .pd:hover{
+                transition: background 0.3s;
+                background: rgba(0,0,0,0.3)
+            }
+            .pt{
+                padding: 0 3px;
+/*                border-left: 2px solid #FFF;*/
+            }
+        </style>
+        <script>
+            app.controller('projectCtrl', function($scope){
+                $scope.projects = [
+                    {
+                        "name":"This Site",
+                        "tech":["Web", "Angular.js"]
+                    },
+                    {
+                        "name":"Server Indicator",
+                        "tech":["Web", "Angular.js"],
+                        "bg":"/img/serverstatus.png"
+                    },
+                    {
+                        "name":"Netflix Scanner",
+                        "tech":["Node.js", "Cheerio"],
+                        "bg":"/img/netflixscan.png"
+                    },
+                    {
+                        "name":"Muute",
+                        "tech":["Web", "PHP"]
+                    },
+                ]
+            })
+        </script>
+    </head>
+    <body ng-controller="projectCtrl">
+        <div class="nav" ng-include="'/nav.html'"></div>
+        <main>
+            <h2>Projects</h2>
+            <div class="project" ng-repeat="project in projects" style="background:url({{project.bg || '/img/thing.jpg'}}) #000 no-repeat center;background-size:cover">
+                <div class="pd">
+                    <div class="pn">{{project.name}}</div>
+                    <div class="pts"><span class="pt" ng-repeat="tech in project.tech">{{tech}} </span></div>
+                </div>
+            </div>
+            <footer>
+                Made by Asher Foster in 2015 - 
+                <a target="_blank" class="subtle" href="//twitter.com/asherfoster">Twitter</a>
+                -
+                <a target="_blank" class="subtle" href="//freelancer.com/u/Ashernz.html">Freelancer</a>
+                -
+                <a target="_blank" class="subtle" href="//github.com/AsherFoster">GitHub</a>
+            </footer>
+        </main>
+    </body>
+</html>

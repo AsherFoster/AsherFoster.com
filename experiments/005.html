@@ -2,20 +2,27 @@
 <html>
     <head>
         <script type="text/javascript">
-            var out;
+            var out,
+                chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-=+_{}[]:";\'?>/.,|';
             window.onload = function(){
                 out = document.getElementsByTagName("div")[0];
+                out.onclick = select;
+            }
+            function select() {
+                var selection = window.getSelection(),
+                    range = document.createRange();
+                range.selectNodeContents(out);
+                selection.removeAllRanges();
+                selection.addRange(range);
             }
             setInterval(function(){
                 if(out.parentElement.querySelector(':hover') !== out)
-//                    out.innerText = Math.random().toString(36).substring(2)
                     out.innerText = (function(){
-                        var result = '',
-                            chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-=+_{}[]:";\'?>/.,|';
+                        var result = '';
                         for (var i = 25; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
                         return result
                     })()
-            }, 10)
+            }, 10);
         </script>
         <style>
             html, body{

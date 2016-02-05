@@ -3,7 +3,7 @@ var posts = [
         "title":"Welcome",
         "time":1447974000000,
         "img":"/img/lake.png",
-        "content":"This is my blog of random tech things and photography experiments. This site may go down every now and then, and things will likely change a lot, as it is in beta",
+        "content":"This is my blog of random tech things and photography experiments. I coded this site by hand, and the code is availible on GitHub for anyone who wants to see how it works. If you want to employ me, I'm on Freelancer (In other words, feel free to give me money)",
         "url":"/about"
     },
     {
