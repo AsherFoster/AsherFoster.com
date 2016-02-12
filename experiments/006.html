@@ -1,19 +1,60 @@
 <!DOCTYPE html>
-<html ng-controller="calc">
+<html ng-app="calc">
     <head>
         <title>Averager</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     </head>
     <body ng-controller="main">
         <input id="input" onkeypress="keyHandler(event)">
-        <span id="out">OUT</span>
+        <button onclick="reset()">Reset</button>
+        <div id="entered">{{nums || "Nothing"}}</div>
+        Mean: <span id="mean">{{mean || 0}}</span>
+        <br>
+        Median: <span id="median">{{median || 0}}</span>
+        <br>
+        Mode: <span id="mode">{{mode || 0}}</span>
+        <br>
+        Range: <span id="range">{{range || 0}}</span>
+        <br>
+        Lower Quartile: <span id="lq">{{lq || 0}}</span>
+        <br>
+        Upper Quartile: <span id="uq">{{uq || 0}}</span>
+        <br>
+        Inner Quartile Range: <span id="iqr">{{iqr || 0}}</span>
         <script>
-            "use strict";
+            function reset(){
+                nums = []
+            }
             function keyHandler(e){
                 e.keyCode == 13 && function(){
                     nums.push(Number(input.value));
                     input.value = "";
                 }()
+            }
+            function sum(arr){
+                var sum = 0;
+                arr.forEach(function(val){
+                    sum += val
+                });
+                return sum;
+            }
+            function mode(array){
+                if(array.length == 0) return null;
+                var modeMap = {};
+                var maxEl = array[0], maxCount = 1;
+                for(var i = 0; i < array.length; i++){
+                    var el = array[i];
+                    if(modeMap[el] == null)
+                        modeMap[el] = 1;
+                    else
+                        modeMap[el]++;	
+                    if(modeMap[el] > maxCount)
+                    {
+                        maxEl = el;
+                        maxCount = modeMap[el];
+                    }
+                }
+                return maxEl;
             }
             function avg(){
                 var x = 0;
@@ -24,12 +65,18 @@
             }
             var app = angular.module('calc', []),
                 input = document.getElementById("input"),
-                out = document.getElementById("out"),
                 nums = [];
-                setInterval(function(){
-                        out.innerHTML = avg();
-                }, 100)
-                app.controller('main', function($scope){
+                app.controller('main', function($scope, $interval){
+                    $interval(function(){
+                        nums = nums.sort(function(a, b){
+                            return a - b
+                        });
+                        $scope.nums = nums;
+                        $scope.mean = sum(nums)/nums.length;
+                        $scope.mode = mode(nums);
+                        $scope.range = nums[nums.length -1] - nums[0];
+                        $scope.uq = sum(nums.slice(nums.length/2))/nums.length/2
+                    },1000)
                 })
         </script>
     </body>
