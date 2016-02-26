@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Explosion!</title>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fabric.js/1.5.0/fabric.min.js"></script>
+    </head>
+    <body>
+        <canvas height="500" width="500" id="main">You _really_ need to update</canvas>
+        <script>
+            var canvas = new fabric.StaticCanvas("main"),
+                x = 10,
+                y = 10;
+                rect = new fabric.Rect({
+                    top: 400,
+                    left: 400,
+                    height: 50,
+                    width: 50
+                });
+            canvas.add(rect)
+        </script>
+    </body>
+</html>
