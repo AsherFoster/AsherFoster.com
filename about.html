@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html ng-app="site">
-    <head>
-        <title>Asher Foster - About</title>
-        <link rel="stylesheet" href="/css/main.css" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:300' rel='stylesheet' type='text/css'>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="/js/main.js"></script>
-    </head>
-    <body>
-        <div class="nav" ng-include="'/nav.html'"></div>
-        <main>
-            <h2>About Me</h2>
-            <p>Im a teen programmer, who loves making sites and things with code. I'm currently the Lead Developer at <a href="https://developster.io">Developster</a>, and a student at <a href="kohknowco.org">Kohknowco Lab</a>. I've messed around with a tons of different technologies, but specialise in web development, primarily front end Angular stuff.</p>
-            <h2>What is this site</h2>
-            <p>I made this site ages ago, and have been swamped with other work, so I don't update it a whole lot. Feel free to fork it, or submit a PR at <a href="github.com/asherfoster/asherfoster.github.com">it's Github Repo</a></p>
-            <footer>
-                Made by Asher Foster in 2015 - 
-                <a target="_blank" class="subtle" href="//twitter.com/asherfoster">Twitter</a>
-                -
-                <a target="_blank" class="subtle" href="//freelancer.com/u/Ashernz.html">Freelancer</a>
-                -
-                <a target="_blank" class="subtle" href="//github.com/AsherFoster">GitHub</a>
-            </footer>
-        </main>
-    </body>
+<html lang="en" ng-app="afPage">
+  <head>
+    <meta charset="UTF-8">
+    <title>About // Asher Foster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/styles/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-53155844-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='//www.google-analytics.com/analytics.js'></script>
+  </head>
+  <body>
+    <nav></nav>
+    <div class="subheader" flex layout-align="start end" layout="row" layout-padding>
+      <h1>About</h1>
+    </div>
+    <md-content style="overflow: scroll;max-height: 100vh" class="md-padding">
+      <h3 class="md-headline">So, who is Asher Foster?</h3>
+      <p>Im a teen programmer, who loves making sites and things with code. I'm currently the Lead Developer at Developster, and a student at Kohknowco Lab. I've messed around with a tons of different technologies, but specialise in web development, primarily front end Angular stuff.</p>
+
+      <h3 class="md-headline">What's this odd looking thing? Is it one of those "websites"?</h3>
+      <p>This site is a little thing I made with Angular (And Angular Material. I'm a developer, not a designer). I don't update it a lot, but it's one of those things I should have. One day I'll put something interesting here... One day...</p>
+
+      <p>Awesome image on the homepage designed by Jesper</p>
+    </md-content>
+    <footer></footer>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/nav.js"></script>
+  </body>
 </html>

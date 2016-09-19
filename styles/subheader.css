@@ -1,0 +1,16 @@
+.subheader{
+    color: #FFF;
+    height: 20em;
+    max-height: 60vh;
+    background: #512DA8;
+}
+.subheader.subheader-offscreen{
+    display: none;
+}
+.subheader-sticky{
+    display: none;
+}
+.subheader-sticky.subheader-offscreen{
+    display: block;
+    position: fixed;
+}
