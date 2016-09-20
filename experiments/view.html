@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="afPage" ng-controller="experimentViewCtrl as view">
+  <head>
+    <meta charset="UTF-8">
+    <title ng-bind="experimentTitle">Experiments // Asher Foster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/styles/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-53155844-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='//www.google-analytics.com/analytics.js'></script>
+    <style>
+      iframe{
+        width: 100vw;
+        border: none;
+        min-height: 100vh;
+      }
+      .sticky{
+        position: sticky;
+      }
+    </style>
+  </head>
+  <body ng-cloak>
+    <nav></nav>
+    <div class="subheader" flex layout-align="start end" layout="row" layout-padding>
+      <h1>Experiments</h1>
+    </div>
+    <md-content>
+      <md-toolbar class="sticky">
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" ng-click="back()">
+            <md-icon>arrow_back</md-icon>
+          </md-button>
+          <md-slider ng-model="id" md-discrete aria-label="Experiment Number" flex step="1" min="1" max="{{max}}"></md-slider>
+          <md-button class="md-icon-button" ng-click="next()">
+            <md-icon>arrow_forward</md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <iframe scrolling="no" ng-src="{{url}}" onload="typeof handleIframeLoad === 'function' && handleIframeLoad(this)"></iframe>
+      <div layout="row" layout-align="center" ng-show="loading" layout-padding="">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+      </div>
+    </md-content>
+    <footer></footer>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/experiment.js"></script>
+    <script src="/scripts/nav.js"></script>
+  </body>
+</html>

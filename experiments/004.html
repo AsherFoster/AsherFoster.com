@@ -51,7 +51,7 @@
                 top: 3px;
             }
         </style>
-        <script src="/js/angular.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script>
             var d = document,
                 colors = [
@@ -82,7 +82,7 @@
                     this.health = 20;
                     this.name = "Player";
                     this.color = colors[Object.keys(colors)[Math.floor(Math.random()*5)]];
-                }
+                };
             function reCalc(){
                 d.getElementById("fab").style.left = window.innerWidth - 80 + "px";
                 d.getElementById("fab").style.top = window.innerHeight - 80 + "px";
