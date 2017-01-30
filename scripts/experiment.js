@@ -15,7 +15,7 @@
         }
       })
       .controller('experimentViewCtrl', function($scope){
-        $scope.max = 6;
+        $scope.max = 7;
         $scope.id = parseInt(location.hash.substr(1)) || 1;
         $scope.experimentTitle = $scope.id ?
             'Experiment ' + $scope.id + ' // Asher Foster' :
